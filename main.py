@@ -3,8 +3,7 @@
 # throughout this file
 import pygame
 from constants import *
-from circleshape import *
-from player import *
+from player import Player
 
 def main():
     pygame.init()
@@ -18,8 +17,9 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        screen.fill((0, 0, 0))
+        screen.fill("black")
         player.draw(screen)
+        player.update(dt)
         pygame.display.flip()
         dt = clock.tick(60) / 1000
 
